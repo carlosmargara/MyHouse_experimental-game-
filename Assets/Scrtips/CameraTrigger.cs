@@ -22,7 +22,20 @@ public class CameraTrigger : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        FixedCameraManager.Instance.SetFixedCamera(fixedCamera);
+        FixedCameraManager.Instance.SetCurrentTrigger(this);
+
+        if (CameraModeManager.Instance.currentMode == CameraMode.FixedRE)
+        {
+            FixedCameraManager.Instance.SetFixedCamera(fixedCamera);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Player"))
+            return;
+
+        FixedCameraManager.Instance.SetCurrentTrigger(this);
     }
 
     void OnDrawGizmos()

@@ -14,31 +14,71 @@ public class TankController : MonoBehaviour
     [Header("Lighter Movement")]
     [SerializeField] private float lighterSpeedMultiplier = 0.9f;
 
+    [Header("Interaction")]
+    [SerializeField] private CrosshairController crosshairController;
+
     private float currentSpeedMultiplier = 1f;
 
     private Vector2 moveInput;
-    private PlayerInputActions input;
     private CharacterController controller;
     private float yVelocity;
 
     private Transform currentCameraTransform;
 
+    // INPUT
+    private PlayerInput playerInput;
+    private InputAction moveAction;
+    private InputAction interactAction;
+
     void Awake()
     {
-        input = new PlayerInputActions();
         controller = GetComponent<CharacterController>();
+
+        playerInput = GetComponent<PlayerInput>();
+
+        moveAction = playerInput.actions["Move"];
+        interactAction = playerInput.actions["Interact"];
     }
 
     void OnEnable()
     {
-        input.Enable();
-        input.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        input.Player.Move.canceled += _ => moveInput = Vector2.zero;
+        moveAction.performed += OnMove;
+        moveAction.canceled += OnMoveCanceled;
+
+        interactAction.performed += OnInteract;
     }
 
     void OnDisable()
     {
-        input.Disable();
+        moveAction.performed -= OnMove;
+        moveAction.canceled -= OnMoveCanceled;
+
+        interactAction.performed -= OnInteract;
+    }
+
+    private void OnMove(InputAction.CallbackContext ctx)
+    {
+        moveInput = ctx.ReadValue<Vector2>();
+    }
+
+    private void OnMoveCanceled(InputAction.CallbackContext ctx)
+    {
+        moveInput = Vector2.zero;
+    }
+
+    private void OnInteract(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("TANK INTERACT LLAMADO");
+
+        if (crosshairController != null)
+        {
+            Debug.Log("Llamando a TryInteract()");
+            crosshairController.TryInteract();
+        }
+        else
+        {
+            Debug.LogWarning("CrosshairController NO asignado");
+        }
     }
 
     void Update()
@@ -49,11 +89,9 @@ public class TankController : MonoBehaviour
 
     void HandleMovement()
     {
-        // ROTACIÓN TANQUE
         float rotate = moveInput.x;
         transform.Rotate(Vector3.up * rotate * rotateSpeed * Time.deltaTime);
 
-        // MOVIMIENTO ADELANTE / ATRÁS (dirección del personaje)
         Vector3 move = transform.forward * moveInput.y;
 
         if (controller.isGrounded && yVelocity < 0)

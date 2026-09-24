@@ -1,0 +1,973 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9158366535324803619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puerta
+  m_EditorClassIdentifier: 
+  Path: event:/Puerta
+  Guid:
+    Data1: -1660034984
+    Data2: 1167528820
+    Data3: -2122076497
+    Data4: 957052758
+  Banks:
+  - {fileID: 7599692354322655840}
+  - {fileID: 4107621542510869631}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2286238480743057578}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14783
+--- !u!114 &-8518827008184330816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Closed_Door/DoorMaterial
+  m_EditorClassIdentifier: 
+  Name: DoorMaterial
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3628046740
+    data2: 1717338693
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8097844681751932327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/droncito
+  m_EditorClassIdentifier: 
+  Path: event:/droncito
+  Guid:
+    Data1: -1595853723
+    Data2: 1234634708
+    Data3: 1944234142
+    Data4: 12836503
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20434
+--- !u!114 &-7690480539690943622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank A.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Bank A.bank
+  Name: Bank A
+  StudioPath: bank:/Bank A
+  lastModified: 639186984290916503
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-7594491873591366900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heladera
+  m_EditorClassIdentifier: 
+  Path: event:/Heladera
+  Guid:
+    Data1: -1001376202
+    Data2: 1106727288
+    Data3: -493450084
+    Data4: 560102260
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 34421
+--- !u!114 &-5670620323412316994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639186984290716072
+  FileSizes:
+  - Name: 
+    Value: 842
+  Exists: 1
+--- !u!114 &-5509788058793053758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2674428091
+    data2: 3653511406
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Default
+  - Pasillo
+  - Rooftop
+  - Escalera
+  Exists: 1
+--- !u!114 &-4872322405457237540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639251438837435555
+  FileSizes:
+  - Name: 
+    Value: 1816
+  Exists: 1
+--- !u!114 &-3559870145578519428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639186984290706075
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3355972420775496002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FXs/Doors/the key slides into the lock_Sound
+  m_EditorClassIdentifier: 
+  Path: event:/FXs/Doors/the key slides into the lock_Sound
+  Guid:
+    Data1: -273177053
+    Data2: 1195479224
+    Data3: 751173525
+    Data4: -1344709183
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3697
+--- !u!114 &-3250807420159147633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Player/footsteps
+  Guid:
+    Data1: 1468813628
+    Data2: 1315442434
+    Data3: 1606106529
+    Data4: 1463308908
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5509788058793053758}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 922
+--- !u!114 &-2148958339044385831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Desktop/Master.bank
+  Name: Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 639218930544408842
+  FileSizes: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -4872322405457237540}
+  - {fileID: 7871516030422497840}
+  - {fileID: 7599692354322655840}
+  - {fileID: 4107621542510869631}
+  EditorEvents:
+  - {fileID: -9158366535324803619}
+  - {fileID: -8097844681751932327}
+  - {fileID: 2364005042343197606}
+  - {fileID: -3250807420159147633}
+  - {fileID: 5875234042652140775}
+  - {fileID: 5533562346796610588}
+  - {fileID: 524568552994230784}
+  - {fileID: -3355972420775496002}
+  - {fileID: 3910276668508687981}
+  - {fileID: 2212797959573970954}
+  - {fileID: 429590075018376154}
+  - {fileID: 3320328026388036364}
+  - {fileID: 1490783195177792759}
+  - {fileID: -7594491873591366900}
+  - {fileID: 1920571325015180916}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 4107621542510869631}
+  StringsBanks:
+  - {fileID: -4872322405457237540}
+  cacheVersion: 131860
+  cacheTime: 639251438837435555
+  SerializableEventsDict:
+  - key: event:/Puerta
+    index: 0
+  - key: event:/droncito
+    index: 1
+  - key: event:/FXs/Zippo
+    index: 2
+  - key: event:/Player/footsteps
+    index: 3
+  - key: event:/FXs/PickUp Item
+    index: 4
+  - key: event:/Player/footsteps_OneShotPlay
+    index: 5
+  - key: event:/FXs/Doors/Closed_Door
+    index: 6
+  - key: event:/FXs/Doors/the key slides into the lock_Sound
+    index: 7
+  - key: event:/FXs/Doors/Open_Door
+    index: 8
+  - key: event:/Ambience/amb
+    index: 9
+  - key: event:/FXs/WD-40
+    index: 10
+  - key: event:/Generador
+    index: 11
+  - key: event:/Ambience/Dpto 10_Amb
+    index: 12
+  - key: event:/Heladera
+    index: 13
+  - key: event:/Cajones_Bedroom
+    index: 14
+--- !u!114 &429590075018376154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FXs/WD-40
+  m_EditorClassIdentifier: 
+  Path: event:/FXs/WD-40
+  Guid:
+    Data1: 885287577
+    Data2: 1159824044
+    Data3: 1157069481
+    Data4: 371402017
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3242
+--- !u!114 &524568552994230784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FXs/Doors/Closed_Door
+  m_EditorClassIdentifier: 
+  Path: event:/FXs/Doors/Closed_Door
+  Guid:
+    Data1: -90084723
+    Data2: 1214615958
+    Data3: 180665002
+    Data4: -1984892670
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8518827008184330816}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4281
+--- !u!114 &1490783195177792759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Dpto 10_Amb
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Dpto 10_Amb
+  Guid:
+    Data1: -260476323
+    Data2: 1182457866
+    Data3: -885198176
+    Data4: 1956842077
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 37846
+--- !u!114 &1920571325015180916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cajones_Bedroom
+  m_EditorClassIdentifier: 
+  Path: event:/Cajones_Bedroom
+  Guid:
+    Data1: -317180214
+    Data2: 1250011179
+    Data3: 501546686
+    Data4: 1092375404
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &2027736459649640232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb
+  m_EditorClassIdentifier: 
+  Path: event:/amb
+  Guid:
+    Data1: 751898279
+    Data2: 1223020011
+    Data3: 1793784488
+    Data4: -317537297
+  Banks:
+  - {fileID: -7690480539690943622}
+  - {fileID: -3559870145578519428}
+  - {fileID: 4473529507697459124}
+  - {fileID: -2148958339044385831}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 58514
+--- !u!114 &2212797959573970954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/amb
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/amb
+  Guid:
+    Data1: 751898279
+    Data2: 1223020011
+    Data3: 1793784488
+    Data4: -317537297
+  Banks:
+  - {fileID: 7599692354322655840}
+  - {fileID: 4107621542510869631}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4346465841619911877}
+  - {fileID: 7704195699125171237}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 140945
+--- !u!114 &2240732674252181036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps_OneShotPlay/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2674428091
+    data2: 3653511406
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Default
+  - Pasillo
+  - Rooftop
+  - Escalera
+  Exists: 1
+--- !u!114 &2286238480743057578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Puerta/Distancia
+  m_EditorClassIdentifier: 
+  Name: Distancia
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1471429175
+    data2: 388682767
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2364005042343197606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FXs/Zippo
+  m_EditorClassIdentifier: 
+  Path: event:/FXs/Zippo
+  Guid:
+    Data1: -282978260
+    Data2: 1093625855
+    Data3: 2044480435
+    Data4: -1610867696
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5240939315451187677}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9000
+--- !u!114 &3320328026388036364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Generador
+  m_EditorClassIdentifier: 
+  Path: event:/Generador
+  Guid:
+    Data1: 850642712
+    Data2: 1193595242
+    Data3: -823780693
+    Data4: -795546442
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 4
+  Length: 60024
+--- !u!114 &3910276668508687981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FXs/Doors/Open_Door
+  m_EditorClassIdentifier: 
+  Path: event:/FXs/Doors/Open_Door
+  Guid:
+    Data1: 1764880428
+    Data2: 1299109878
+    Data3: 381218196
+    Data4: 1370838118
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7001511810217568475}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2900
+--- !u!114 &4107621542510869631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639251438837405558
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4346465841619911877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/amb/Rooftop_On_Off
+  m_EditorClassIdentifier: 
+  Name: Rooftop_On_Off
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1606661276
+    data2: 2716715637
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4473529507697459124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Bank A.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Desktop/Bank A.bank
+  Name: Desktop/Bank A
+  StudioPath: bank:/Bank A
+  lastModified: 639218930544119015
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5240939315451187677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Zippo/Zippo_Closed
+  m_EditorClassIdentifier: 
+  Name: Zippo_Closed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 993092927
+    data2: 4136066890
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5533562346796610588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/footsteps_OneShotPlay
+  m_EditorClassIdentifier: 
+  Path: event:/Player/footsteps_OneShotPlay
+  Guid:
+    Data1: 1829079015
+    Data2: 1230687738
+    Data3: -1853994345
+    Data4: 1916033216
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2240732674252181036}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 922
+--- !u!114 &5710780416664799494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter://Distancia
+  m_EditorClassIdentifier: 
+  Name: Distancia
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1471429175
+    data2: 388682767
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5875234042652140775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FXs/PickUp Item
+  m_EditorClassIdentifier: 
+  Path: event:/FXs/PickUp Item
+  Guid:
+    Data1: -1590709226
+    Data2: 1129244925
+    Data3: -1938216811
+    Data4: -1592406946
+  Banks:
+  - {fileID: 4107621542510869631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1846
+--- !u!114 &5960040606621287431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/All Sounf.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Desktop/All Sounf.bank
+  Name: Desktop/All Sounf
+  StudioPath: bank:/All Sounf
+  lastModified: 639218929622632569
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6045808589278242268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/All Sounf.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/All Sounf.bank
+  Name: All Sounf
+  StudioPath: bank:/All Sounf
+  lastModified: 639186984291241846
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6153618481410010749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: 
+  Guid:
+    Data1: -1660034984
+    Data2: 1167528820
+    Data3: -2122076497
+    Data4: 957052758
+  Banks:
+  - {fileID: 4473529507697459124}
+  - {fileID: -2148958339044385831}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5710780416664799494}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14783
+--- !u!114 &7001511810217568475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Open_Door/DoorMaterial
+  m_EditorClassIdentifier: 
+  Name: DoorMaterial
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3628046740
+    data2: 1717338693
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7599692354322655840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank A.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Desktop/Bank A.bank
+  Name: Bank A
+  StudioPath: bank:/Bank A
+  lastModified: 639251417042127027
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7704195699125171237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/amb/Exterior_Exposure
+  m_EditorClassIdentifier: 
+  Name: Exterior_Exposure
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 274900321
+    data2: 446404185
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7871516030422497840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/All Sounf.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio_FMOD/mYhOUse/Build/Desktop/Desktop/All Sounf.bank
+  Name: All Sounf
+  StudioPath: bank:/All Sounf
+  lastModified: 639218929622632569
+  FileSizes: []
+  Exists: 1

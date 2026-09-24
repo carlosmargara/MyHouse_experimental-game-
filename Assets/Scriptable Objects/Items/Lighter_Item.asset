@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c792d3085e728b7439378f6c1d312c7d, type: 3}
+  m_Name: Lighter_Item
+  m_EditorClassIdentifier: 
+  ID: Encendedor
+  itemName: Encendedor
+  description: "Es un encendedor clasico.Podria usarlo para ver por donde voy. \xBFTendra
+    algun otro uso?"
+  prefabModel: {fileID: 919132149155446097, guid: 9abc156aa318e0648a6f6bd5a71ba262, type: 3}
+  pickupText: Aca esta el encendedor, por fin
+  pickupText02: Quieres agarrar el encendedor?
+  confirmationText: haz agarrdo el encendedor
+  typeItem: 1

@@ -4,7 +4,7 @@ public class FlashlightWallAdjust : MonoBehaviour
 {
     [Header("Referencias")]
     [SerializeField] private Light flashlight;
-    [SerializeField] private FlashlightToggle flashlightToggle;
+    [SerializeField] private LighterSystem lighterSystem;
     [SerializeField] private Transform cameraTransform;
 
     [Header("Raycast")]
@@ -26,7 +26,7 @@ public class FlashlightWallAdjust : MonoBehaviour
 
     private void Update()
     {
-        if (flashlight == null || flashlightToggle == null || cameraTransform == null)
+        if (flashlight == null || lighterSystem == null || cameraTransform == null)
             return;
 
         if (!flashlight.enabled)
@@ -36,11 +36,7 @@ public class FlashlightWallAdjust : MonoBehaviour
         forwardFlat.y = 0f;
         forwardFlat.Normalize();
 
-        Ray ray = new Ray(cameraTransform.position, forwardFlat); // de esta forma con el forwardFlat estoy midiendo la distancia de posicion no de vision de la camara
-                                                                  // como pasaba con las lineas que estan abajo 
-
-        // Ray SIEMPRE desde la cámara (mirada)
-        //Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        Ray ray = new Ray(cameraTransform.position, forwardFlat);
 
         float targetZ = normalZ;
         float targetMultiplier = 1f;
@@ -61,19 +57,17 @@ public class FlashlightWallAdjust : MonoBehaviour
             }
         }
 
-        // Movimiento local de la luz (hija del player)
         Vector3 localPos = transform.localPosition;
         localPos.z = Mathf.Lerp(localPos.z, targetZ, Time.deltaTime * positionSmooth);
         transform.localPosition = localPos;
 
-        // Intensidad multiplicativa (respeta flicker)
         currentMultiplier = Mathf.Lerp(
             currentMultiplier,
             targetMultiplier,
             Time.deltaTime * intensitySmooth
         );
 
-        flashlight.intensity = flashlightToggle.CurrentIntensity * currentMultiplier;
+        flashlight.intensity = lighterSystem.CurrentIntensity * currentMultiplier;
     }
 
     private void OnDrawGizmos()

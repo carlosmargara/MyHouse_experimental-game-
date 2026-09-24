@@ -21,7 +21,20 @@ public class HeadBob : MonoBehaviour
 
     void Update()
     {
-        Vector2 move = fpsController.MoveInput; // ahora lo exponemos bien
+        if (fpsController == null || !fpsController.enabled)
+        {
+            timer = 0f;
+
+            cameraPivot.localPosition = Vector3.Lerp(
+                cameraPivot.localPosition,
+                startLocalPos,
+                Time.deltaTime * returnSpeed
+                );
+
+            return;
+        }
+
+        Vector2 move = fpsController.MoveInput;
 
         if (move.magnitude > 0.1f && fpsController.IsGrounded)
         {
@@ -34,11 +47,12 @@ public class HeadBob : MonoBehaviour
         else
         {
             timer = 0f;
+
             cameraPivot.localPosition = Vector3.Lerp(
                 cameraPivot.localPosition,
                 startLocalPos,
                 Time.deltaTime * returnSpeed
-            );
+                );
         }
     }
 }

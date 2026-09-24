@@ -5,8 +5,8 @@ public class FPSController : MonoBehaviour
 {
     [Header("Animation")]
     [SerializeField] private Animator animator;
-    [SerializeField] private bool hasRun = false; // por si después agregás sprint
-    
+    [SerializeField] private bool hasRun = false;
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 4f;
     [SerializeField] private float gravity = -9.8f;
@@ -24,95 +24,128 @@ public class FPSController : MonoBehaviour
     private float currentSpeedMultiplier = 1f;
 
     private CharacterController controller;
+    private PlayerInput playerInput;
+
+    private InputAction moveAction;
+    private InputAction lookAction;
+    private InputAction interactAction;
+
     private Vector2 moveInput;
     private Vector2 lookInput;
+
     private float yVelocity;
     private float xRotation = 0f;
-
-    private PlayerInputActions input; //vatiable de tipo PlayerInputAction basia 
 
     public Vector2 MoveInput => moveInput;
     public bool IsGrounded => controller.isGrounded;
 
     private Vector3 moveDirection;
 
-    void Awake()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        input = new PlayerInputActions(); //acá creás una instancia real del input, creas la instancia y la guardas 
+
+        playerInput = GetComponent<PlayerInput>();
+
+        moveAction = playerInput.actions["Move"];
+        lookAction = playerInput.actions["Look"];
+        interactAction = playerInput.actions["Interact"];
     }
 
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-
-    void OnEnable()
+    private void OnEnable()
     {
-        input.Enable(); //es como que lo prendes, empezas a escuchar piezas
-        input.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); //performed, cuando se ejecuta
-        input.Player.Move.canceled += _ => moveInput = Vector2.zero; //canceled, cuando se suelta termina 
+        moveAction.performed += OnMove;
+        moveAction.canceled += OnMoveCanceled;
 
-        input.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
-        input.Player.Look.canceled += _ => lookInput = Vector2.zero;
-        
-        input.Player.Interact.performed += OnInteract;
+        lookAction.performed += OnLook;
+        lookAction.canceled += OnLookCanceled;
+
+        interactAction.performed += OnInteract;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
-        input.Player.Interact.performed -= OnInteract;
-        input.Disable();
+        moveAction.performed -= OnMove;
+        moveAction.canceled -= OnMoveCanceled;
+
+        lookAction.performed -= OnLook;
+        lookAction.canceled -= OnLookCanceled;
+
+        interactAction.performed -= OnInteract;
     }
 
-    void Update()
+    private void Update()
     {
         HandleMovement();
         HandleLook();
         UpdateAnimator();
     }
 
-    void HandleMovement()
+    private void OnMove(InputAction.CallbackContext ctx)
     {
-        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
+        moveInput = ctx.ReadValue<Vector2>();
+    }
 
-        // Guardamos dirección NORMALIZADA para animaciones
-        moveDirection = move.normalized;
+    private void OnMoveCanceled(InputAction.CallbackContext ctx)
+    {
+        moveInput = Vector2.zero;
+    }
+
+    private void OnLook(InputAction.CallbackContext ctx)
+    {
+        lookInput = ctx.ReadValue<Vector2>();
+    }
+
+    private void OnLookCanceled(InputAction.CallbackContext ctx)
+    {
+        lookInput = Vector2.zero;
+    }
+
+    private void HandleMovement()
+    {
+        Vector3 horizontalMove = transform.right * moveInput.x + transform.forward * moveInput.y;
+
+        if (horizontalMove.magnitude > 1f)
+            horizontalMove.Normalize();
+
+        moveDirection = horizontalMove;
 
         if (controller.isGrounded && yVelocity < 0)
             yVelocity = -2f;
 
         yVelocity += gravity * Time.deltaTime;
-        move.y = yVelocity;
 
-        controller.Move(move * moveSpeed * currentSpeedMultiplier * Time.deltaTime);
+        Vector3 finalMove = horizontalMove * moveSpeed * currentSpeedMultiplier;
+        finalMove.y = yVelocity;
+
+        controller.Move(finalMove * Time.deltaTime);
     }
 
-
-    void HandleLook()
+    private void HandleLook()
     {
         float mouseX = lookInput.x * mouseSensitivity;
         float mouseY = lookInput.y * mouseSensitivity;
 
-        // Rotación vertical (Pitch)
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -45f, 60f);
+
         cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        // Rotación horizontal (Yaw)
         transform.Rotate(Vector3.up * mouseX);
     }
 
-    void UpdateAnimator()
+    private void UpdateAnimator()
     {
         if (!animator) return;
 
-        // Forward / Back
         animator.SetFloat("InputY", moveInput.y, 0.15f, Time.deltaTime);
 
-        // Rotación (usamos el valor absoluto)
         animator.SetFloat("InputX", Mathf.Abs(moveInput.x), 0.15f, Time.deltaTime);
 
         bool isMoving =
@@ -122,7 +155,7 @@ public class FPSController : MonoBehaviour
         animator.SetBool("IsMoving", isMoving);
     }
 
-    void OnInteract(InputAction.CallbackContext ctx)
+    private void OnInteract(InputAction.CallbackContext ctx)
     {
         if (crosshairController != null)
             crosshairController.TryInteract();
@@ -130,7 +163,23 @@ public class FPSController : MonoBehaviour
 
     public void SetLighterActive(bool isActive)
     {
-        Debug.Log("LAMADA!!!!");
         currentSpeedMultiplier = isActive ? lighterSpeedMultiplier : 1f;
+
+        Debug.Log($"Lighter Active: {isActive} / Speed Multiplier: {currentSpeedMultiplier}");
+    }
+
+    public void ResetInput()
+    {
+        moveInput = Vector2.zero;
+        lookInput = Vector2.zero;
+        moveDirection = Vector3.zero;
+        yVelocity = 0f;
+
+        if (animator != null)
+        {
+            animator.SetFloat("InputY", 0f);
+            animator.SetFloat("InputX", 0f);
+            animator.SetBool("IsMoving", false);
+        }
     }
 }

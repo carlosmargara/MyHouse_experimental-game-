@@ -5,6 +5,7 @@ public class FixedCameraManager : MonoBehaviour
 {
     public static FixedCameraManager Instance;
 
+    private CameraTrigger currentTrigger;
     [Header("Current Fixed Camera")]
     public CinemachineVirtualCamera currentFixedCamera;
 
@@ -22,24 +23,32 @@ public class FixedCameraManager : MonoBehaviour
         Instance = this;
     }
 
+    public void SetCurrentTrigger(CameraTrigger trigger)
+    {
+        currentTrigger = trigger;
+    }
+
     public void SetFixedCamera(CinemachineVirtualCamera newCamera)
     {
         if (newCamera == null)
             return;
 
-        if (currentFixedCamera == newCamera)
-            return;
-
-        // Baja la anterior
-        if (currentFixedCamera != null)
+        if (currentFixedCamera != null && currentFixedCamera != newCamera)
             currentFixedCamera.Priority = 0;
 
-        // Sube la nueva
         currentFixedCamera = newCamera;
         currentFixedCamera.Priority = 10;
 
-        // Avisamos al tank controller qué cámara usar
-        tankController.SetCameraTransform(currentFixedCamera.transform);
+        if (tankController != null)
+            tankController.SetCameraTransform(currentFixedCamera.transform);
+    }
+
+    public void RefreshCurrentFixedCamera()
+    {
+        if (currentTrigger == null)
+            return;
+
+        SetFixedCamera(currentTrigger.fixedCamera);
     }
 
     public void DisableFixedCamera()

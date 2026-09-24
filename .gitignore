@@ -19,3 +19,14 @@ UserSettings/
 *.mdb
 *.opendb
 *.VC.db
+
+# FMOD logs y temporales
+*.log
+fmod_editor.log
+
+# VS Code
+.vscode/
+
+# Unity temporales extra
+MemoryCaptures/
+Recordings/

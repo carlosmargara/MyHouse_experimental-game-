@@ -9,6 +9,8 @@ public enum CameraMode
 
 public class CameraModeManager : MonoBehaviour
 {
+    public static CameraModeManager Instance;
+
     public CameraMode currentMode = CameraMode.FPS;
 
     [Header("Controllers")]
@@ -18,11 +20,15 @@ public class CameraModeManager : MonoBehaviour
     [Header("Cinemachine")]
     public GameObject fpsVirtualCamera; // CM_Player
 
+    [Header("UI")]
+    public CrosshairController crosshairController;
+
     private PlayerInputActions input;
 
     void Awake()
     {
-        input = new PlayerInputActions(); //creas la intancia real del input 
+        Instance = this;
+        input = new PlayerInputActions();
     }
 
     void OnEnable()
@@ -60,14 +66,19 @@ public class CameraModeManager : MonoBehaviour
 
         fpsVirtualCamera.SetActive(isFPS);
 
+        crosshairController.ShowCrosshair(isFPS);
+
         if (isFPS)
         {
-            // Apagamos cualquier cámara fija activa
             FixedCameraManager.Instance.DisableFixedCamera();
         }
+        else
+        {
+            FixedCameraManager.Instance.RefreshCurrentFixedCamera();
+        }
 
-        Cursor.lockState = isFPS ? CursorLockMode.Locked : CursorLockMode.None;
-        Cursor.visible = !isFPS;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         Debug.Log("Camera Mode: " + currentMode);
     }
